@@ -40,9 +40,9 @@ function Blog(){
 
       return(<body className="bg-dark">
       
-            <nav className="navbar navbar-expand bg-dark navbar-dark" id="blogNavbar">
+            <nav className="navbar navbar-expand bg-dark navbar-dark position-fixed w-100" id="blogNavbar">
                   <div className="container">
-                        <a href="#" className="navbar-brand" onClick={homePage}>MiniBlog</a>
+                        <a href="#space-top" className="navbar-brand" onClick={homePage}>MiniBlog</a>
                         <ul className="navbar-nav gap-4">
                               <li className="nav-item">
                                     <a href="#" className="nav-link active">Home</a>
@@ -59,6 +59,7 @@ function Blog(){
                         </ul>
                   </div>
             </nav>
+            <div id="space-top"></div>
             <section className="container bg-light px-5" id="postagens">
                   <div className="py-2 px-lg-5">
                         <h1 className="py-3">{posts[0].title}</h1>
@@ -70,26 +71,26 @@ function Blog(){
                               <div className="col-lg-6">
                                     <br/>
                                     <p>{posts[0].description}</p>
-                                    <a className="btn btn-primary"  href="#blogNavbar" onClick={() => showPost(posts[0])}>Ler mais</a><br></br>
+                                    <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[0])}>Ler mais</a><br></br>
                                     <h3 className="h5">{posts[0].profileName}</h3>
                                     <img class="img-fluid" alt="profileImage" src={posts[0].profileThumbImage}></img>
                               </div>
                         </div>
                   </div>
-                  <div className="row px-lg-5">
+                  <div className="row px-lg-5 blogCards">
                         <div className="col-lg-6 mt-5">
-                              <div className="card h-100 rounded-0">
+                              <div className="card h-100">
                                     <img className="card-img" src={posts[1].thumbImage} alt={posts[1].thumbImageAltText}></img>
                                     <div className="card-body p-4">
                                           <h2 className="h4">{posts[1].title}</h2>
                                           <h3 className="h6">Publicado em: {posts[1].postDate}</h3>
                                           <hr/>
                                           <p>{posts[1].description}</p>
-                                          <a className="btn btn-primary"  href="#blogNavbar" onClick={() => showPost(posts[1])}>Ler mais</a>
+                                          <a className="btn btn-primary" href="#space-top" onClick={() => showPost(posts[1])}>Ler mais</a>
                                     </div>
                                     <div className="card-footer">
-                                          <img class="img-fluid" alt="profileImage" src={posts[1].profileThumbImage}></img>
                                           <h3 className="h5">{posts[1].profileName}</h3>
+                                          <img class="img-fluid" alt="profileImage" src={posts[1].profileThumbImage}></img>
                                     </div>
                               </div>
                         </div>
@@ -101,7 +102,7 @@ function Blog(){
                                           <h3 className="h6">Publicado em: {posts[2].postDate}</h3>
                                           <hr/>
                                           <p>{posts[2].description}</p>
-                                          <a className="btn btn-primary"  href="#blogNavbar" onClick={() => showPost(posts[2])}>Ler mais</a>
+                                          <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[2])}>Ler mais</a>
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[2].profileName}</h3>
@@ -117,7 +118,7 @@ function Blog(){
                                           <h3 className="h6">Publicado em: {posts[3].postDate}</h3>
                                           <hr/>
                                           <p>{posts[3].description}</p>
-                                          <a className="btn btn-primary"  href="#blogNavbar" onClick={() => showPost(posts[3])}>Ler mais</a>
+                                          <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[3])}>Ler mais</a>
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[3].profileName}</h3>
@@ -133,7 +134,7 @@ function Blog(){
                                           <h3 className="h6">Publicado em: {posts[4].postDate}</h3>
                                           <hr/>
                                           <p>{posts[4].description}</p>
-                                          <a className="btn btn-primary"  href="#blogNavbar" onClick={() => showPost(posts[4])}>Ler mais</a>
+                                          <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[4])}>Ler mais</a>
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[4].profileName}</h3>
@@ -148,7 +149,7 @@ function Blog(){
                               <div className="col-lg-6">
                                     <br/>
                                     <p>{posts[5].description}</p>
-                                    <a className="btn btn-primary"  href="#blogNavbar" onClick={() => showPost(posts[5])}>Ler mais</a><br></br>
+                                    <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[5])}>Ler mais</a><br></br>
                                     <h3 className="h5">{posts[5].profileName}</h3>
                                     <img class="img-fluid" alt="profileImage" src={posts[5].profileThumbImage}></img>
                               </div>
