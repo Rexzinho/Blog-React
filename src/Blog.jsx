@@ -35,7 +35,7 @@ function Blog(){
       }
       
       if(loading){
-            return <div>Aguarde... Isso pode levar alguns segundos</div>
+            return <div className="bg-dark text-light p-3">Aguarde... Isso pode levar alguns segundos</div>
       }
 
       return(<body className="bg-dark">
