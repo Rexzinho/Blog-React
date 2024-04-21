@@ -6,7 +6,13 @@ function Blog(){
 
       const [posts, setPosts] = useState([]);
       const [postagem, setPostagem] = useState({});
+      const [profileImg, setProfileImg] = useState("");
+      const [postImg, setPostImg] = useState("");
       const [loading, setLoading] = useState(true);
+
+      const perfilImgs = ["https://randomuser.me/api/portraits/men/12.jpg", "https://randomuser.me/api/portraits/women/12.jpg", "https://randomuser.me/api/portraits/men/13.jpg", "https://randomuser.me/api/portraits/men/14.jpg", "https://randomuser.me/api/portraits/women/13.jpg", "https://randomuser.me/api/portraits/women/14.jpg"];
+      
+      const blogImgs = ["https://picsum.photos/500/277", "https://picsum.photos/500/278", "https://picsum.photos/500/279" , "https://picsum.photos/500/280", "https://picsum.photos/500/281", "https://picsum.photos/500/282"]
 
       useEffect(() => {
             fetch(`https://api-fake-blog.onrender.com/postagens`, {
@@ -18,6 +24,8 @@ function Blog(){
               .then(data => {
                   setPosts(data);
                   setPostagem(data[0]);
+                  setProfileImg(perfilImgs[0]);
+                  setPostImg(blogImgs[0]);
                   setLoading(false);
             })
               .catch(err => console.error(err));
@@ -27,6 +35,27 @@ function Blog(){
             document.getElementById("postagens").style.display = "none";
             document.getElementById("postagem").style.display = "block";
             setPostagem(post);
+            let postIndex = (posts.indexOf(post));
+            switch(postIndex){
+                  case 0: setProfileImg(perfilImgs[0]); 
+                          setPostImg(blogImgs[0]);
+                          break;
+                  case 1: setProfileImg(perfilImgs[1]); 
+                          setPostImg(blogImgs[1]);
+                          break;
+                  case 2: setProfileImg(perfilImgs[2]); 
+                          setPostImg(blogImgs[2]);
+                          break;
+                  case 3: setProfileImg(perfilImgs[3]); 
+                          setPostImg(blogImgs[3]);
+                          break;
+                  case 4: setProfileImg(perfilImgs[4]); 
+                          setPostImg(blogImgs[4]);
+                          break;
+                  case 5: setProfileImg(perfilImgs[5]); 
+                          setPostImg(blogImgs[5]);
+                          break;
+            }
       }
 
       function homePage(){
@@ -66,21 +95,21 @@ function Blog(){
                         <div className="row">
                               <div className="col-lg-6 my-3">
                                     <h3 className="h6">Publicado em: {posts[0].postDate}</h3>
-                                    <img className="img-fluid" src={posts[0].thumbImage} alt={posts[0].thumbImageAltText}></img>
+                                    <img className="img-fluid" src={blogImgs[0]} alt={posts[0].thumbImageAltText}></img>
                               </div>
                               <div className="col-lg-6">
                                     <br/>
                                     <p>{posts[0].description}</p>
-                                    <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[0])}>Ler mais</a><br></br>
+                                    <a className="btn btn-primary rounded-0 mb-2"  href="#space-top" onClick={() => showPost(posts[0])}>Ler mais</a><br></br>
                                     <h3 className="h5">{posts[0].profileName}</h3>
-                                    <img class="img-fluid" alt="profileImage" src={posts[0].profileThumbImage}></img>
+                                    <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[0]}></img>
                               </div>
                         </div>
                   </div>
                   <div className="row px-lg-5 blogCards">
                         <div className="col-lg-6 mt-5">
                               <div className="card h-100">
-                                    <img className="card-img" src={posts[1].thumbImage} alt={posts[1].thumbImageAltText}></img>
+                                    <img className="card-img" src={blogImgs[1]} alt={posts[1].thumbImageAltText}></img>
                                     <div className="card-body p-4">
                                           <h2 className="h4">{posts[1].title}</h2>
                                           <h3 className="h6">Publicado em: {posts[1].postDate}</h3>
@@ -90,13 +119,13 @@ function Blog(){
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[1].profileName}</h3>
-                                          <img class="img-fluid" alt="profileImage" src={posts[1].profileThumbImage}></img>
+                                          <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[1]}></img>
                                     </div>
                               </div>
                         </div>
                         <div className="col-lg-6 mt-5">
                               <div className="card h-100">
-                                    <img className="card-img" src={posts[2].thumbImage} alt={posts[2].thumbImageAltText}></img>
+                                    <img className="card-img" src={blogImgs[2]} alt={posts[2].thumbImageAltText}></img>
                                     <div className="card-body p-4">
                                           <h2 className="h4">{posts[2].title}</h2>
                                           <h3 className="h6">Publicado em: {posts[2].postDate}</h3>
@@ -106,13 +135,13 @@ function Blog(){
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[2].profileName}</h3>
-                                          <img class="img-fluid" alt="profileImage" src={posts[2].profileThumbImage}></img>
+                                          <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[2]}></img>
                                     </div>
                               </div>
                         </div>
                         <div className="col-lg-6 mt-5">
                               <div className="card h-100">
-                                    <img className="card-img" src={posts[3].thumbImage} alt={posts[3].thumbImageAltText}></img>
+                                    <img className="card-img" src={blogImgs[3]} alt={posts[3].thumbImageAltText}></img>
                                     <div className="card-body p-4">
                                           <h2 className="h4">{posts[3].title}</h2>
                                           <h3 className="h6">Publicado em: {posts[3].postDate}</h3>
@@ -122,13 +151,13 @@ function Blog(){
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[3].profileName}</h3>
-                                          <img class="img-fluid" alt="profileImage" src={posts[3].profileThumbImage}></img>
+                                          <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[3]}></img>
                                     </div>
                               </div>
                         </div>
                         <div className="col-lg-6 mt-5">
                               <div className="card h-100">
-                                    <img className="card-img" src={posts[4].thumbImage} alt={posts[4].thumbImageAltText}></img>
+                                    <img className="card-img" src={blogImgs[4]} alt={posts[4].thumbImageAltText}></img>
                                     <div className="card-body p-4">
                                           <h2 className="h4">{posts[4].title}</h2>
                                           <h3 className="h6">Publicado em: {posts[4].postDate}</h3>
@@ -138,35 +167,36 @@ function Blog(){
                                     </div>
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[4].profileName}</h3>
-                                          <img class="img-fluid" alt="profileImage" src={posts[4].profileThumbImage}></img>
+                                          <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[4]}></img>
                                     </div>
                               </div>
                         </div>
                   </div>
                   <div className="py-5 px-lg-5">
                         <div className="row">
-                              <h1 className="py-3">{posts[5].title}</h1>
+                              <h2 className="h1 py-3">{posts[5].title}</h2>
                               <div className="col-lg-6">
                                     <br/>
                                     <p>{posts[5].description}</p>
-                                    <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[5])}>Ler mais</a><br></br>
+                                    <a className="btn btn-primary rounded-0 mb-2"  href="#space-top" onClick={() => showPost(posts[5])}>Ler mais</a><br></br>
                                     <h3 className="h5">{posts[5].profileName}</h3>
-                                    <img class="img-fluid" alt="profileImage" src={posts[5].profileThumbImage}></img>
+                                    <img className="img-fluid profileImg" src={perfilImgs[5]} alt={posts[5].thumbImageAltText}></img>
                               </div>
                               <div className="col-md-6">
                                     <h3 className="h6">Publicado em: {posts[5].postDate}</h3>
-                                    <img className="img-fluid" src={posts[5].thumbImage} alt={posts[5].thumbImageAltText}></img>
+                                    <img className="img-fluid" src={blogImgs[5]} alt={posts[5].thumbImageAltText}></img>
                               </div>
                         </div>
                   </div>
             </section>
             <div className="container bg-light px-lg" id="postagem">
-                        <h1 className="py-3">{postagem.title}</h1>
-                        <h3 className="h6">Publicado em: {postagem.postDate}</h3>
-                        <img className="img-fluid" src={postagem.thumbImage} alt={postagem.thumbImageAltText}></img>
-                        <p class="mt-4">{postagem.description}</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nostrum soluta distinctio fugit voluptates! Assumenda consequatur ad, reprehenderit eum ullam suscipit, ea accusamus nihil ipsam corrupti, sunt sint et. Ratione possimus fuga magni, natus facere distinctio explicabo dicta cum quod qui quibusdam esse? Corporis iste nam facere at vitae ducimus, sequi fugit beatae perspiciatis ea ullam maiores ipsam dignissimos?</p>
-                        <img class="img-fluid" alt="profileImage" src={postagem.profileThumbImage}></img>
+                        <h2 className="h1 py-3">{postagem.title}</h2>
+                        <h3 className="h5">Publicado em: {postagem.postDate}</h3>
+                        <img className="img-fluid postagemImg" src={postImg} alt={postagem.thumbImageAltText}></img>
+                        <p class="mt-4 lead">{postagem.description}</p>
+                        <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nostrum soluta distinctio fugit voluptates! Assumenda consequatur ad, reprehenderit eum ullam suscipit, ea accusamus nihil ipsam corrupti, sunt sint et. Ratione possimus fuga magni, natus facere distinctio explicabo dicta cum quod qui quibusdam esse? Corporis iste nam facere at vitae ducimus, sequi fugit beatae perspiciatis ea ullam maiores ipsam dignissimos?</p>
+                        <p className="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi qui labore in laborum reprehenderit blanditiis, numquam accusantium! Similique maxime provident accusantium numquam quos iure consectetur dignissimos quam? Ea provident quaerat cum vitae sed quidem? Delectus hic quidem tempore! Error, labore.</p>
+                        <img class="img-fluid profileImg" alt="profileImage" src={profileImg}></img>
                         <h3 className="h5 py-5">{postagem.profileName}</h3>
             </div>
             <footer class="py-5 container">

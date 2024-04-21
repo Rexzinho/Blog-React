@@ -7,7 +7,9 @@ html{
 }
 #postagem{
       display: none;
-
+}
+.postagemImg{
+      width:100%;
 }
 #blogNavbar{
       z-index: 999;
@@ -18,4 +20,9 @@ html{
 }
 .blogCards *{
       border-radius:0px;
+}
+.profileImg{
+      width:70px;
+      height:70px;
+      border-radius: 100%;
 }
