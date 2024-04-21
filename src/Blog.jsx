@@ -197,7 +197,7 @@ function Blog(){
                         <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nostrum soluta distinctio fugit voluptates! Assumenda consequatur ad, reprehenderit eum ullam suscipit, ea accusamus nihil ipsam corrupti, sunt sint et. Ratione possimus fuga magni, natus facere distinctio explicabo dicta cum quod qui quibusdam esse? Corporis iste nam facere at vitae ducimus, sequi fugit beatae perspiciatis ea ullam maiores ipsam dignissimos?</p>
                         <p className="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi qui labore in laborum reprehenderit blanditiis, numquam accusantium! Similique maxime provident accusantium numquam quos iure consectetur dignissimos quam? Ea provident quaerat cum vitae sed quidem? Delectus hic quidem tempore! Error, labore.</p>
                         <img class="img-fluid profileImg" alt="profileImage" src={profileImg}></img>
-                        <h3 className="h5 py-5">{postagem.profileName}</h3>
+                        <h3 className="h5 pb-5">{postagem.profileName}</h3>
             </div>
             <footer class="py-5 container">
                   <h2 class="text-light h5">Copyright©2024-MiniBlog</h2>
