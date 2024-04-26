@@ -1,6 +1,9 @@
 html{
       background-color: #212529;
 }
+#nav{
+      flex-grow: 0;
+}
 .px-lg{
       padding-right:100px;
       padding-left:100px;

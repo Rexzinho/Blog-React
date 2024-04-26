@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.esm";
 
 function Blog(){
 
@@ -69,23 +70,28 @@ function Blog(){
 
       return(<body className="bg-dark">
       
-            <nav className="navbar navbar-expand bg-dark navbar-dark position-fixed w-100" id="blogNavbar">
+            <nav className="navbar navbar-expand-md bg-dark navbar-dark position-fixed w-100" id="blogNavbar">
                   <div className="container">
                         <a href="#space-top" className="navbar-brand" onClick={homePage}>MiniBlog</a>
-                        <ul className="navbar-nav gap-4">
-                              <li className="nav-item">
-                                    <a href="#" className="nav-link active">Home</a>
-                              </li>
-                              <li className="nav-item">
-                                    <a href="#" className="nav-link">Postagens</a>
-                              </li>
-                              <li className="nav-item">
-                                    <a href="#" className="nav-link">Sobre nós</a>
-                              </li>
-                              <li className="nav-item">
-                                    <a href="#" className="nav-link">Futebol</a>
-                              </li>
-                        </ul>
+                        <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav">
+                              <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse p-2" id="nav">
+                              <ul className="navbar-nav gap-4">
+                                    <li className="nav-item">
+                                          <a href="#" className="nav-link active">Home</a>
+                                    </li>
+                                    <li className="nav-item">
+                                          <a href="#" className="nav-link">Postagens</a>
+                                    </li>
+                                    <li className="nav-item">
+                                          <a href="#" className="nav-link">Sobre nós</a>
+                                    </li>
+                                    <li className="nav-item">
+                                          <a href="#" className="nav-link">Futebol</a>
+                                    </li>
+                              </ul>
+                        </div>
                   </div>
             </nav>
             <div id="space-top"></div>
@@ -189,7 +195,8 @@ function Blog(){
                         </div>
                   </div>
             </section>
-            <div className="container bg-light px-lg" id="postagem">
+            <div className="container bg-light px-5" id="postagem">
+                  <div className="container px-md-5">
                         <h2 className="h1 py-3">{postagem.title}</h2>
                         <h3 className="h5">Publicado em: {postagem.postDate}</h3>
                         <img className="img-fluid postagemImg" src={postImg} alt={postagem.thumbImageAltText}></img>
@@ -198,9 +205,14 @@ function Blog(){
                         <p className="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi qui labore in laborum reprehenderit blanditiis, numquam accusantium! Similique maxime provident accusantium numquam quos iure consectetur dignissimos quam? Ea provident quaerat cum vitae sed quidem? Delectus hic quidem tempore! Error, labore.</p>
                         <img class="img-fluid profileImg" alt="profileImage" src={profileImg}></img>
                         <h3 className="h5 pb-5">{postagem.profileName}</h3>
+                  </div>
             </div>
-            <footer class="py-5 container">
-                  <h2 class="text-light h5">Copyright©2024-MiniBlog</h2>
+            <footer class="py-5 container text-light">
+                  <div className="row">
+                        <div className="col-md-6">
+                              <h2 class="h5">Copyright©2024-MiniBlog</h2>
+                        </div>
+                  </div>
             </footer>
       </body>);
 }
