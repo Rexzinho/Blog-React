@@ -65,7 +65,7 @@ function Blog(){
       }
       
       if(loading){
-            return <div className="bg-dark text-light p-3">Aguarde... Isso pode levar alguns segundos</div>
+            return <div className="bg-dark text-light p-3">Aguarde... Isso pode levar alguns segundos... Blog feito em REACT</div>
       }
 
       return(<body className="bg-dark">
