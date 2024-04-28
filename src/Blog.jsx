@@ -13,7 +13,7 @@ function Blog(){
 
       const perfilImgs = ["https://randomuser.me/api/portraits/men/12.jpg", "https://randomuser.me/api/portraits/women/12.jpg", "https://randomuser.me/api/portraits/men/13.jpg", "https://randomuser.me/api/portraits/men/14.jpg", "https://randomuser.me/api/portraits/women/13.jpg", "https://randomuser.me/api/portraits/women/14.jpg"];
       
-      const blogImgs = ["https://picsum.photos/500/277", "https://picsum.photos/500/278", "https://picsum.photos/500/279" , "https://picsum.photos/500/280", "https://picsum.photos/500/281", "https://picsum.photos/500/282"]
+      const blogImgs = ["https://picsum.photos/500/280?random=1", "https://picsum.photos/500/280?random=2", "https://picsum.photos/500/280?random=3" , "https://picsum.photos/500/280?random=4", "https://picsum.photos/500/280?random=5", "https://picsum.photos/500/280?random=6"]
 
       useEffect(() => {
             fetch(`https://api-fake-blog.onrender.com/postagens`, {
