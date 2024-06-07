@@ -78,9 +78,6 @@ function Blog(){
             </nav>
             <div id="space-top"></div>
             <section className="container bg-light px-5" id="postagens">
-                  {posts.map(post) => (
-                        
-                  )}
                   <div className="py-2 px-lg-5">
                         <h1 className="py-3">{posts[0].title}</h1>
                         <div className="row">
