@@ -37,26 +37,8 @@ function Blog(){
             document.getElementById("postagem").style.display = "block";
             setPostagem(post);
             let postIndex = (posts.indexOf(post));
-            switch(postIndex){
-                  case 0: setProfileImg(perfilImgs[0]); 
-                          setPostImg(blogImgs[0]);
-                          break;
-                  case 1: setProfileImg(perfilImgs[1]); 
-                          setPostImg(blogImgs[1]);
-                          break;
-                  case 2: setProfileImg(perfilImgs[2]); 
-                          setPostImg(blogImgs[2]);
-                          break;
-                  case 3: setProfileImg(perfilImgs[3]); 
-                          setPostImg(blogImgs[3]);
-                          break;
-                  case 4: setProfileImg(perfilImgs[4]); 
-                          setPostImg(blogImgs[4]);
-                          break;
-                  case 5: setProfileImg(perfilImgs[5]); 
-                          setPostImg(blogImgs[5]);
-                          break;
-            }
+            setProfileImg(perfilImgs[postIndex]); 
+            setPostImg(blogImgs[postIndex]);
       }
 
       function homePage(){
@@ -96,6 +78,9 @@ function Blog(){
             </nav>
             <div id="space-top"></div>
             <section className="container bg-light px-5" id="postagens">
+                  {posts.map(post) => (
+                        
+                  )}
                   <div className="py-2 px-lg-5">
                         <h1 className="py-3">{posts[0].title}</h1>
                         <div className="row">
@@ -158,22 +143,6 @@ function Blog(){
                                     <div className="card-footer">
                                           <h3 className="h5">{posts[3].profileName}</h3>
                                           <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[3]}></img>
-                                    </div>
-                              </div>
-                        </div>
-                        <div className="col-lg-6 mt-5">
-                              <div className="card h-100">
-                                    <img className="card-img" src={blogImgs[4]} alt={posts[4].thumbImageAltText}></img>
-                                    <div className="card-body p-4">
-                                          <h2 className="h4">{posts[4].title}</h2>
-                                          <h3 className="h6">Publicado em: {posts[4].postDate}</h3>
-                                          <hr/>
-                                          <p>{posts[4].description}</p>
-                                          <a className="btn btn-primary"  href="#space-top" onClick={() => showPost(posts[4])}>Ler mais</a>
-                                    </div>
-                                    <div className="card-footer">
-                                          <h3 className="h5">{posts[4].profileName}</h3>
-                                          <img class="img-fluid profileImg" alt="profileImage" src={perfilImgs[4]}></img>
                                     </div>
                               </div>
                         </div>
